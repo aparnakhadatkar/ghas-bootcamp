@@ -1,0 +1,16 @@
+name: Code Scanning
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  codeql-analysis:
+    name: Analyze code with CodeQL
+    uses: github/codeql-action/analyze@v2
+    with:
+      languages: 'javascript'
